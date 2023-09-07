@@ -1,0 +1,23 @@
+div{
+    background-color: red;
+    font-size: 30pt;
+    color: wheat;
+}
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.fontClass{
+    font-size: 30pt;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+p b {
+    color: violet;
+}
+#footer{
+
+}
+#header {
+
+}
