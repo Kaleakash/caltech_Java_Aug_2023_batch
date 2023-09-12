@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function sayHello() {
+                alert("Welcome to user defined function")
+        }
+        function add(a,b){
+            var sum = a+b;
+            alert("Sum in add function is "+sum);
+        }
+        function checkUser(emailid,password){
+            if(emailid=="akash@gmail.com" && password=="123"){
+                return "success";
+            }else {
+                return "failure";
+            }
+        }
+    </script>
+</head>
+<body>
+    <script type="text/JavaScript">
+        // sayHello(); // no passing parameter and no return type
+        // add(10,20); // function passing parameter.
+        // add(100,200);
+        // add(1,2); 
+        var emailid = prompt("Enter your emailid")
+        var password = prompt("Enter your password")
+        var result1 = checkUser(emailid,password);
+        alert("Main script "+result1)
+    </script>
+</body>
+</html>
