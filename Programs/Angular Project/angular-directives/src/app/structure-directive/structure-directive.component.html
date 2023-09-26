@@ -1,0 +1,30 @@
+<div>
+    <h3>Structure Directive ie ngIf and ngFor</h3>
+   <!-- <p>Ng If Code 1st Para</p>
+   <p *ngIf="true">Ng If Code 2nd Para</p>
+   <p *ngIf="false">Ng If Code 3rd Para</p>
+   <p *ngIf="f1">Ng if true value</p>
+   <p *ngIf="f2">Ng if false value</p>
+   <hr/>
+   <input type="button" value="click here" (click)="fun()"/><br/>
+   <div *ngIf="flag">
+        <h2>Welcome to Angular</h2>
+   </div>
+   <hr/>
+   <input type="button" [value]="b1" (click)="toggle()"/>
+   <div *ngIf="flag1">
+        <h1>Welcome to Angular Application</h1>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIMAAACDCAMAAACZQ1hUAAAA/FBMVEX////qQjVChfQ1qFP6uwDFIhwspk2DqPc7gvR9wIwmpEmQsveOyJs3gPT7vgD0lx7pNjfSLibD4MnG1vvpMSDUdnT7zW/EFQzqOyzpNSX7uAD2vbrwjon63dz//PfAAADtZ1/qU0n86+vwiIPoIgbrXFPIFgDpKxjpwL/hqqjho6Lsysn96cf94bD825393qf+9uvQYl/ajIv804X7x1n95Lr+ymXGNjX9wDLJQ0DVRj/2ozr+79jdmJfTJx7JipzqzHyNarGss0hwg9x+sVupWojQuUGWbqzAOke1VXXeu0FHq1z7khSUoeWXt4i2yfiy17lek/Xj6/3X6tvja6DrAAADZklEQVR4nO3aV3faMBgGYMuDUhI6ErfYxsyw0qQpCaFJuoHudCb//79UdjHYGkgeor343lssznP0GlvSQdMgEAgEAoFAIBAIBALZXrqjwyeHR0V9W/P46cmz6TjVmKNTqxXEOusWIBhPTNPDMc+Ppcc0z1o1629a1ig3YWp65jLepCk56LRlrdM6y0mYrAQB4rkcIkHAiIs8fYwv4wSMOJcZNUoSLKuWo4+pScabSgy7qllkMvcx8SiDeSke1iCnIUS8yNJH9yUtwBPxSjjwNctgvXHqqQl15/49luFEOPLRgGV4iFw/JcF3H7ANj8UG+nYIDcjup+mj27dR8Qbk2PJ91G0HqTAg5B5IEg7c4HIlBmS3Zfrotm2kzoAcid9H3XGQSgOeCtHvw7ejS5UZBH1EPag1IAfx+6gjB23DgFCP14ffi1+W2fCW85xMxG03GEMbbRdJGN4JDXdmA8ZMEAZmH4keuAZvfldsqC6u6KkgDYw+kj1wDN7l+4qEoVzWP1AI2oDcfryPRt+lrqAN3sdroyRj0HX9k1UTGhJ9UD0wDd7cMKQN5cXFQGhAaBj14Q9ZHxMG3IORwoCT7INtQHYn6KPbsZmfJg3e12sjpSHZB8cQvj9W74fNhrlhpDboi88DoSF4VNA3I21Y9pDaUNa/DMQG1s1IGaIeUhuwYhb1scHAz9owN4yshnUfeQyxHjIZoj5yGOI9ZDLgzGq1PAZvbhi5DWEfWQ1ED5kNOu4jq4HoIYdBn/X4v8ANhm9kD3kM5e999uN4U+z+j1KBhupO0+c+DjnBG9TdSqEG/HoepunDGeIXe+GGcBsr30OwASjeoDXZywRGhn549KXAgPtwZfpw3OUCS4lBa3CWK4keOtFCU42Bt2xL9LC6VpWBvXxd9xDfeCgz4D74jwq3E1/wqzOwtjPLEBsflQZOH9QGUKmB2t6GPVAbYbUGTTsg++jRB2aqDUQfzIMR5Qbcx/p5ZTMPJNQbcB8RwmYfXG7DsHx/rN4P/8QQHsPxD+q2Ywj64B8gb8ugsW7GbRs2BAxgAAMYwKDGsPMfGH5WFRsqv8QDlRsk/o3CmogCDTLTgO+IKnVLFGYoVXblhu7/rpLJaiglU7nekx58s0/kJpPhdo/IbaavgUAgEAgEAoFAIBAIJEv+AB6geRt1S786AAAAAElFTkSuQmCC"
+        width="300px" height="300px"/>
+    </div> -->
+    <p>{{names}}</p>
+    Name :<input type="text" #nameRef/>
+    <input type="button" value="Add Names" (click)="addName(nameRef)"/><br/>
+    <h2>Display all names one by one</h2>
+    <ul>
+        <li *ngFor="let name of names">{{name}}</li>
+    </ul>
+</div>
+
+
+

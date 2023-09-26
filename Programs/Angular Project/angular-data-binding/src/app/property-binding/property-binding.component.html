@@ -1,0 +1,17 @@
+<div>
+    <h2>One way binding using property binding</h2>
+    <input type="text"/><br/>
+    <input type="text" value="Ajay"/><br/>
+    <input type="text" value="fname"/><br/>
+    <input type="text" [value]="fname"/><br/>
+    <p [innerText]="fname"></p>             {{fname}}
+
+    <hr/>
+    <input type="button" value="click here"/><br/>
+    <input type="button" value="click here" disabled/><br/>
+    <input type="button" value="click here" disabled={{f1}}/>
+    <input type="button" value="click here" [disabled]="f2"/>
+</div>
+
+
+
