@@ -1,1 +1,11 @@
-<p>attribute-directive works!</p>
+<div>
+    <h3>Attribute directive ngStyle and ngClass</h3>
+    <p style="color:red">HTML inline css style</p>
+    <p [ngStyle]="styleVarialbe">Angular inline css style</p>
+    <p class="abc">HTML CSS class selector</p>
+    <p [ngClass]="{abc:true}">Angular ngClass selector</p>
+    <p [ngClass]="{abc:f1,xyz:f2}">This is ngClass selector with two classes</p>
+    <p [ngClass]="{abc:f1,xyz:f2}"
+    (mouseover)="abcClass()" (mouseout)="xyzClass()">
+    This is ngClass selector with two classes with event</p>
+</div>
