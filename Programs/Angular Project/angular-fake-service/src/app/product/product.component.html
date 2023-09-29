@@ -1,0 +1,13 @@
+<div>
+    <input type="button" value="Load Product" (click)="loadProduct()"/>
+    <br/>
+    <input type="button" value="Display Product" (click)="loadJsonFake()"/>
+    <hr/>
+    <!-- <ul>
+        <li *ngFor="let product of products">Id is {{product.id}} Title {{product.title}}</li>
+    </ul> -->
+    <div *ngFor="let product of products">
+        <img src={{product.image}} width="200px" height="200px"/>
+        Title {{product.title}} Price {{product.price}}
+    </div>
+</div>
