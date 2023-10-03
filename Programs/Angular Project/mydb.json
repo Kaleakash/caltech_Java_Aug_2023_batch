@@ -1,0 +1,6 @@
+{
+	"products":[
+	{"id":1,"pname":"Tv","price":88000},
+	{"id":2,"pname":"Computer","price":56000}
+	]
+}
