@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <form [formGroup]="categoryRef" (ngSubmit)="storeCategoryDetails()">
+        <label>Category Name</label>
+        <input type="text" formControlName="categoryName"/><br/>
+        <label>CategoryDescription</label>
+        <input type="text" formControlName="categoryDescription"/><br/>
+        <label>CategoryImageUrl</label>
+        <input type="url" formControlName="categoryImageUrl"/><br/>
+        <input type="submit" [value]="buttonVariable" class="btn btn-success"/>
+        <input type="reset" value="reset" class="btn btn-info"/>
+    </form>
+    <br/>
+    <table class="table">
+        <tr>
+            <th>CID</th>
+            <th>CategoryName</th>
+            <th>CategoryDescription</th>
+            <th>CategoryImageUrl</th>
+            <th>Delete Category</th>
+            <th>Update Category</th>
+        </tr>
+        <tr *ngFor="let category of categories">
+            <td>{{category.id}}</td>
+            <td>{{category.categoryName}}</td>
+            <td>{{category.categoryDescription}}</td>
+            <td><img src="{{category.categoryImageUrl}}" width="100px" height="100px"/></td>
+            <td><input type="button" value="Delete" (click)="deleteCategory(category.id)"/></td>
+            <td><input type="button" value="Update" (click)="updateCategory(category)"/></td>
+        </tr>
+    </table>
+</div>
