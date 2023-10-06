@@ -8,7 +8,7 @@ import {FormGroup,FormControl} from '@angular/forms';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit{
-
+  msg:string ="";
   categoryRef = new FormGroup({
     id:new FormControl(),
     categoryName:new FormControl(),

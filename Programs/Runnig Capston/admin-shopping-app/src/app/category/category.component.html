@@ -1,21 +1,66 @@
 <div class="container-fluid">
-    <form [formGroup]="categoryRef" (ngSubmit)="storeCategoryDetails()">
-        <label>Category Name</label>
-        <input type="text" formControlName="categoryName"/><br/>
-        <label>CategoryDescription</label>
-        <input type="text" formControlName="categoryDescription"/><br/>
-        <label>CategoryImageUrl</label>
-        <input type="url" formControlName="categoryImageUrl"/><br/>
-        <input type="submit" [value]="buttonVariable" class="btn btn-success"/>
-        <input type="reset" value="reset" class="btn btn-info"/>
-    </form>
-    <br/>
-    <table class="table">
+
+    <div class="container-fluid">
+        <form [formGroup]="categoryRef" (ngSubmit)="storeCategoryDetails()">
+            
+            <div class="row rowSpace">
+              <div class="col-4 offset-4"><h3>Store Category</h3></div>  
+            </div>
+        
+        
+            <div class="row rowSpace">
+              <div class="col-2 offset-4">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Category Name" 
+                  formControlName="categoryName">
+                  <label for="floatingInput">Category Name</label>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Category Description" 
+                  formControlName="categoryDescription">
+                  <label for="floatingInput">Category Description</label>
+                </div>
+              </div>
+
+            </div>
+
+              <div class="row rowSpace">
+                <div class="col-4 offset-4">
+                  <div class="form-floating">
+                    <input type="url" class="form-control" id="floatingInput" placeholder="Category Image" 
+                    formControlName="categoryImageUrl">
+                    <label for="floatingInput">Category Image URL</label>
+                  </div>
+                </div>
+              </div>
+        
+            <div class="row rowSpace">
+              <div class="col-2 offset-4">
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Store Category</button>
+              </div>
+
+              <div class="col-2">
+                <button class="w-100 btn btn-lg btn-primary" type="reset">Reset</button>
+              </div>
+
+            </div>
+            
+        
+            <div class="row rowSpace">
+              <div class="col-3 offset-4"><span style="color:red;font-weight: bold;">{{msg}}</span></div>  
+            </div>
+        </form>
+        </div>
+
+    <table class="table table-bordered">
         <tr>
             <th>CID</th>
             <th>CategoryName</th>
             <th>CategoryDescription</th>
-            <th>CategoryImageUrl</th>
+            <th>ImageUrl</th>
             <th>Delete Category</th>
             <th>Update Category</th>
         </tr>
@@ -24,8 +69,16 @@
             <td>{{category.categoryName}}</td>
             <td>{{category.categoryDescription}}</td>
             <td><img src="{{category.categoryImageUrl}}" width="100px" height="100px"/></td>
-            <td><input type="button" value="Delete" (click)="deleteCategory(category.id)"/></td>
-            <td><input type="button" value="Update" (click)="updateCategory(category)"/></td>
+            <td>
+            <a>
+            <img src="https://cdn-icons-png.flaticon.com/128/1828/1828843.png"
+            width="50px" height="50px" (click)="deleteCategory(category.id)"/>
+            </a>                
+            </td>
+            <a>
+            <img src="https://cdn-icons-png.flaticon.com/128/5129/5129742.png"
+            width="50px" height="50px" (click)="updateCategory(category)"/>
+            </a>
         </tr>
     </table>
 </div>

@@ -1,0 +1,17 @@
+ul{
+    border: 2px red solid; 
+    background-color: darkgray;
+    border-radius: 10px;
+}
+li{
+    display: inline-block;
+    margin: 15px;
+    font-size: 20pt;
+    
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color:red
+}

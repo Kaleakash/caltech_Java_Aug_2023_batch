@@ -1,0 +1,157 @@
+<div class="container-fluid">
+
+    <div class="container-fluid">
+        <form [formGroup]="productRef" (ngSubmit)="storeProductDetails()">
+            
+            <div class="row rowSpace">
+              <div class="col-4 offset-4"><h3>Store Product</h3></div>  
+            </div>
+                
+            <div class="row rowSpace">
+              <div class="col-2 offset-4">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" 
+                  placeholder="Product Title" 
+                  formControlName="title">
+                  <label for="floatingInput">Product Title</label>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" 
+                  placeholder="Product Description" 
+                  formControlName="description">
+                  <label for="floatingInput">Product Description</label>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row rowSpace">
+              <div class="col-2 offset-4">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" 
+                  placeholder="Discount Percentage" 
+                  formControlName="discountPercentage">
+                  <label for="floatingInput">Discount Percentage</label>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" 
+                  placeholder="Product Rating" 
+                  formControlName="rating">
+                  <label for="floatingInput">Product Rating</label>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row rowSpace">
+              <div class="col-2 offset-4">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Category Name" 
+                  formControlName="categoryName">
+                  <label for="floatingInput">Category Name</label>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" 
+                  placeholder="Product Stock" 
+                  formControlName="stock">
+                  <label for="floatingInput">Product Stock</label>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row rowSpace">
+              <div class="col-2 offset-4">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" 
+                  placeholder="Product Brand" 
+                  formControlName="brand">
+                  <label for="floatingInput">Product Brand</label>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" 
+                  placeholder="Product Category" 
+                  formControlName="category">
+                  <label for="floatingInput">Product Category</label>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row rowSpace">
+              <div class="col-2 offset-4">
+                <div class="form-floating">
+                  <select class="form-control" id="floatingInput" formControlName="category">
+                      <option *ngFor="let category of categories">{{category.categoryName}}</option>
+                  </select>
+                  <label for="floatingInput">Category Name</label>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" 
+                  placeholder="Product thumbnail" 
+                  formControlName="thumbnail">
+                  <label for="floatingInput">Product thumbnail</label>
+                </div>
+              </div>
+
+            </div>
+
+        
+            <div class="row rowSpace">
+              <div class="col-2 offset-4">
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Store Product</button>
+              </div>
+
+              <div class="col-2">
+                <button class="w-100 btn btn-lg btn-primary" type="reset">Reset</button>
+              </div>
+
+            </div>
+            
+        
+            <div class="row rowSpace">
+              <div class="col-3 offset-4"><span style="color:red;font-weight: bold;"></span></div>  
+            </div>
+        </form>
+        </div>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>PId</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Disc Price</th>
+            <th>Rating</th>
+            <th>Stock</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Thumbnail</th>
+        </tr>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.title}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.discountPercentage}}</td>
+            <td>{{product.rating}}</td>
+            <td>{{product.stock}}</td>
+            <td>{{product.brand}}</td>
+            <td>{{product.category}}</td>
+            <td><img src={{product.thumbnail}} width="100px" height="100px"/></td>
+        </tr>
+    </table>
+</div>
