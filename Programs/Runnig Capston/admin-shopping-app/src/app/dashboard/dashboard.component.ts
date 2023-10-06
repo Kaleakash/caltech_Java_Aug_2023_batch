@@ -12,6 +12,6 @@ export class DashboardComponent {
   constructor(public router:Router){}
 
   logout(): void {
-    this.router.navigate(["logout"]);
+    this.router.navigate(["logout"],{skipLocationChange:true});
   }
 }

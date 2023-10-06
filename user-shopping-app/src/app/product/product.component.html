@@ -1,0 +1,9 @@
+<div class="container">
+    <p><b>Number Items in Cart {{numberOfProducts}}</b></p>
+    <hr/>
+    <div *ngFor="let product of products" id="productInfo">
+        <img src={{product.thumbnail}} width="200px" height="200px"/><br/>
+        <span><b>{{product.title}} {{product.price}}</b></span><br/>
+        <input type="button" value="Add to Cart" (click)="addToCart(product)" class="btn btn-danger"/>
+    </div>
+</div>

@@ -19,11 +19,31 @@ constructor(public loginService:LoginService,public router:Router){}   // DI for
 checkLoginDetails(): void {
   let login = this.loginRef.value;
   
-  if(this.loginService.checkLoginDetails(login)){
+this.loginService.checkLoginDetails().subscribe({
+  next:(result:any)=> {
+     let flag  = result.find((u:any)=>u.emailid==login.emailid && u.password==login.password);
+     if(flag!= undefined){
+        //this.msg="successfully login";
+        //sessionStorage.setItem("user",login.emailid); 
+        sessionStorage.setItem("user",flag.fullName);
         this.router.navigate(["home"],{skipLocationChange:true});
-  } else {
-      this.msg="failure try once again";
-  } 
+     }else {
+        this.msg="Failure try once again"
+     }
+  },
+  error:(error:any)=> {
+
+  },
+  complete:()=> {
+
+  }
+})
+
+  // if(this.loginService.checkLoginDetails(login)){
+  //       this.router.navigate(["home"],{skipLocationChange:true});
+  // } else {
+  //     this.msg="failure try once again";
+  // } 
 
   this.loginRef.reset();
 }

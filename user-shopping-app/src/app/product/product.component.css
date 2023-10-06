@@ -1,0 +1,7 @@
+#productInfo{
+    display: inline-block;
+    border: 4px red solid;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+}
