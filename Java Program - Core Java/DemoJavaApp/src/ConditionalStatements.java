@@ -11,6 +11,7 @@ public class ConditionalStatements {
 //	}else {
 //		System.out.println("b is largest");
 //	}
+		
 	int label=10;
 	switch(label) {
 	case 1:System.out.println("This is 1st block");
@@ -22,7 +23,6 @@ public class ConditionalStatements {
 	 default:System.out.println("Wrong block or default block");
 	         break;
 	}
-	
 	System.out.println("Finish");
 	
 	}
