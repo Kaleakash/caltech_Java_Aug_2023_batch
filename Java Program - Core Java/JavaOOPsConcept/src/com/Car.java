@@ -5,6 +5,24 @@ public class Car {
 	float price;
 	String colour;		// instance variable 
 
+	Car() {
+		System.out.println("Car class object created...emptry constructor called..");
+		wheel = 4;
+		price = 120000;
+		colour= "black";
+	}
+//	Car(int wheel1, float price1, String colour1){
+//		System.out.println("parameter constructor called..");
+//		wheel = wheel1;
+//		price = price1;
+//		colour= colour1;
+//	}
+	Car(int wheel, float price, String colour){
+		System.out.println("parameter constructor called..");
+		this.wheel = wheel;		// both are parameter or local variable 
+		this.price = price;		// this.price is instance and price is local variable. 
+		this.colour= colour;
+	}
 	void start() {
 		System.out.println("Car Started...");
 	}
