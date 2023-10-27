@@ -10,7 +10,8 @@ public class TryCatchFinally {
 		System.out.println("no exception");
 	} catch (Exception e) {
 		System.out.println("catch block");
-	}finally {
+	}
+	finally {
 		System.out.println("finally block");
 	}
 		System.out.println("normal statement");
