@@ -1,9 +1,13 @@
 package com;
-//import java.util.*;		// all classes and interfaces 
+
 import java.util.HashSet;
-public class HashSetDemo {
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetDemo {
+
 	public static void main(String[] args) {
-		HashSet hh = new HashSet();
+		// TODO Auto-generated method stub
+		LinkedHashSet hh = new LinkedHashSet();
 		System.out.println("Size "+hh.size());
 		System.out.println("Empty "+hh.isEmpty());
 		hh.add(10);
