@@ -5,7 +5,7 @@ class MyException extends Exception {
 		//super();
 	}
 	public MyException(String msg) {
-		//super(msg);			// calling super class parameter constructor to set the message. 
+		super(msg);			// calling super class parameter constructor to set the message. 
 	}
 }
 public class ThrowsKeywordExample {
