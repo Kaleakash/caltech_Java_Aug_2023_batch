@@ -9,7 +9,7 @@ public class StackDemo {
 		ss.push(100);
 		ss.push(200);
 		ss.push(300);
-		ss.push(400);
+		ss.push(400);		// top to bottom and count start from 1 
 		System.out.println(ss);
 		System.out.println("To remove top most elements "+ss.pop());
 		System.out.println(ss);
