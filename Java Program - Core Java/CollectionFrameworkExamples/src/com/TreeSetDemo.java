@@ -10,7 +10,7 @@ public class TreeSetDemo {
 		ts.add(3);
 		//ts.add(10.10);
 		System.out.println(ts);
-		System.out.println(ts.subSet(2, 4));
+		System.out.println(ts.subSet(4, 6));
 		System.out.println(ts.tailSet(2));
 		System.out.println(ts.headSet(3));
 	}
