@@ -1,5 +1,6 @@
 package com;
 import java.sql.*;
+import java.util.*;
 public class DemoTest {
 
 	
@@ -11,7 +12,7 @@ public class DemoTest {
 		System.out.println("Drivr Loaded successfully");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/info","root","root@123");
 		System.out.println("Database connected...");	
-		Statement stmt = con.createStatement();
+		//Statement stmt = con.createStatement();
 		
 		// insert Query code 
 //		int res = stmt.executeUpdate("insert into employee values(3,'Mohan',39000)");
@@ -42,16 +43,37 @@ public class DemoTest {
 //		}
 		
 		//	it is use to insert more than one record 
-		stmt.addBatch("insert into employee values(3,'Lokesh',36000)");
-		stmt.addBatch("insert into employee values(4,'John',33000)");
-		stmt.addBatch("insert into employee values(5,'Neena',26000)");
-		stmt.addBatch("insert into employee values(6,'Teena',25000)");
-		stmt.addBatch("insert into employee values(7,'Veena',54000)");
+//		stmt.addBatch("insert into employee values(3,'Lokesh',36000)");
+//		stmt.addBatch("insert into employee values(4,'John',33000)");
+//		stmt.addBatch("insert into employee values(5,'Neena',26000)");
+//		stmt.addBatch("insert into employee values(6,'Teena',25000)");
+//		stmt.addBatch("insert into employee values(7,'Veena',54000)");
+//		
+//		int res[]=stmt.executeBatch();
+//		if(res.length > 0) {
+//			System.out.println("All Records inserted...."+res.length);
+//		}
 		
-		int res[]=stmt.executeBatch();
-		if(res.length > 0) {
-			System.out.println("All Records inserted....");
+		Scanner sc = new Scanner(System.in);
+		
+//		Statement stmt = con.createStatement();
+//		int res = stmt.executeUpdate("insert into employee values(1,'Ravi',140000)");
+		
+		PreparedStatement pstmt = con.prepareStatement("insert into employee values(?,?,?)");
+		System.out.println("Enter the id");
+		int id = sc.nextInt();
+			pstmt.setInt(1,id);
+		System.out.println("Enter the name");
+		String name = sc.next();
+			pstmt.setString(2,name);
+		System.out.println("Enter the salary");
+		float salary = sc.nextFloat();
+			pstmt.setFloat(3,salary);
+		int result = pstmt.executeUpdate();
+		if(result>0) {
+			System.out.println("Record inserted successfully");
 		}
+		
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
