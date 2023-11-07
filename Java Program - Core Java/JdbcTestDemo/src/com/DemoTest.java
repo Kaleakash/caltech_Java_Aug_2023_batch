@@ -19,15 +19,27 @@ public class DemoTest {
 //		System.out.println("Record inserted successfully");
 //		}
 	
-		// Delete Query code 
-		int res = stmt.executeUpdate("delete from employee where id=3");
-		if(res>0) {
-			System.out.println("Record deleted successfully");
-		}else {
-			System.out.println("No record present");
+//		// Delete Query code 
+//		int res = stmt.executeUpdate("delete from employee where id=3");
+//		if(res>0) {
+//			System.out.println("Record deleted successfully");
+//		}else {
+//			System.out.println("No record present");
+//		}
+		
+		// update Query code 
+//				int res = stmt.executeUpdate("update employee set salary = 55000 where id =2");
+//				if(res>0) {
+//					System.out.println("Record updated successfully");
+//				}else {
+//					System.out.println("No record present");
+//				}
+		// Retrieve records 
+		ResultSet rs = stmt.executeQuery("select * from employee");
+		while(rs.next()) {
+	//System.out.println("id is "+rs.getInt(1)+" Name is  "+rs.getString(2)+" Salary is "+rs.getFloat(3));
+System.out.println("id is "+rs.getInt("id")+" Name is  "+rs.getString("name")+" Salary is "+rs.getFloat("salary"));
 		}
-		
-		
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
