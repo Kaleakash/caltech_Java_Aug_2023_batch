@@ -12,7 +12,7 @@ class InnerThread implements Runnable {
 				}
 				if(i==3 && name.equals("John")) {
 					notify();
-					wait();
+					//wait();
 				}
 				System.out.println("name "+name);
 			} catch (Exception e) {
