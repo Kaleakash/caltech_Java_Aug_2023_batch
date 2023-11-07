@@ -4,7 +4,7 @@ public class DemoTest {
 
 	
 	// create table employee(id int primary key,name varchar(20), salary float);
-	
+	// select * from employee;
 	public static void main(String[] args) {
 		try {
 		Class.forName("com.mysql.cj.jdbc.Driver");
