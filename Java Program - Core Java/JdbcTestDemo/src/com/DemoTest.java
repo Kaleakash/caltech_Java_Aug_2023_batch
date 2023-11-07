@@ -59,20 +59,49 @@ public class DemoTest {
 //		Statement stmt = con.createStatement();
 //		int res = stmt.executeUpdate("insert into employee values(1,'Ravi',140000)");
 		
-		PreparedStatement pstmt = con.prepareStatement("insert into employee values(?,?,?)");
+		// Insert Query 
+//		PreparedStatement pstmt = con.prepareStatement("insert into employee values(?,?,?)");
+//		System.out.println("Enter the id");
+//		int id = sc.nextInt();
+//			pstmt.setInt(1,id);
+//		System.out.println("Enter the name");
+//		String name = sc.next();
+//			pstmt.setString(2,name);
+//		System.out.println("Enter the salary");
+//		float salary = sc.nextFloat();
+//			pstmt.setFloat(3,salary);
+//		int result = pstmt.executeUpdate();
+//		if(result>0) {
+//			System.out.println("Record inserted successfully");
+//		}
+		
+//		// Delete Query 
+//		PreparedStatement pstmt = con.prepareStatement("delete from employee where id =?");
+//		System.out.println("Enter the id");
+//		int id = sc.nextInt();
+//			pstmt.setInt(1,id);
+//		int result = pstmt.executeUpdate();
+//		if(result>0) {
+//			System.out.println("Record deleted successfully");
+//		}else {
+//			System.out.println("Record not present");
+//		}
+		
+		// Delete Query 
+		PreparedStatement pstmt = con.prepareStatement("update employee set salary = ? where id =?");
 		System.out.println("Enter the id");
 		int id = sc.nextInt();
-			pstmt.setInt(1,id);
-		System.out.println("Enter the name");
-		String name = sc.next();
-			pstmt.setString(2,name);
+		pstmt.setInt(2,id);
 		System.out.println("Enter the salary");
 		float salary = sc.nextFloat();
-			pstmt.setFloat(3,salary);
-		int result = pstmt.executeUpdate();
-		if(result>0) {
-			System.out.println("Record inserted successfully");
-		}
+		pstmt.setFloat(1,salary);
+		
+				int result = pstmt.executeUpdate();
+				if(result>0) {
+					System.out.println("Record updated successfully");
+				}else {
+					System.out.println("Record not present");
+				}
 		
 		} catch (Exception e) {
 			System.out.println(e.toString());
