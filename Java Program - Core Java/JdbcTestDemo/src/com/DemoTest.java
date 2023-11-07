@@ -87,21 +87,31 @@ public class DemoTest {
 //			System.out.println("Record not present");
 //		}
 		
-		// Delete Query 
-		PreparedStatement pstmt = con.prepareStatement("update employee set salary = ? where id =?");
-		System.out.println("Enter the id");
-		int id = sc.nextInt();
-		pstmt.setInt(2,id);
-		System.out.println("Enter the salary");
+//		// Delete Query 
+//		PreparedStatement pstmt = con.prepareStatement("update employee set salary = ? where id =?");
+//		System.out.println("Enter the id");
+//		int id = sc.nextInt();
+//		pstmt.setInt(2,id);
+//		System.out.println("Enter the salary");
+//		float salary = sc.nextFloat();
+//		pstmt.setFloat(1,salary);
+//		
+//				int result = pstmt.executeUpdate();
+//				if(result>0) {
+//					System.out.println("Record updated successfully");
+//				}else {
+//					System.out.println("Record not present");
+//				}
+		// Retreive with condition 
+		
+		PreparedStatement pstmt = con.prepareStatement("select * from employee where salary >?");
+		System.out.println("enter the salary");
 		float salary = sc.nextFloat();
 		pstmt.setFloat(1,salary);
-		
-				int result = pstmt.executeUpdate();
-				if(result>0) {
-					System.out.println("Record updated successfully");
-				}else {
-					System.out.println("Record not present");
-				}
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+		System.out.println("id is "+rs.getInt("id")+" Name is  "+rs.getString("name")+" Salary is "+rs.getFloat("salary"));			
+		}
 		
 		} catch (Exception e) {
 			System.out.println(e.toString());
