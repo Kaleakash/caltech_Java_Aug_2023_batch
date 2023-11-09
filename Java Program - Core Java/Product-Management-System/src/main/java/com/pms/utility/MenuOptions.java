@@ -9,6 +9,7 @@ public class MenuOptions {
 	static String con;
 	static String emailid,password,typeofuser;
 	static String result;
+	
 	public static void loginMenuOption() {
 	LoginDao ld = new LoginDao();
 		do {
