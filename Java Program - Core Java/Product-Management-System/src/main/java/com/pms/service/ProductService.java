@@ -1,10 +1,7 @@
 package com.pms.service;
-
 import java.util.List;
-
 import com.pms.bean.Product;
 import com.pms.dao.ProductDao;
-
 public class ProductService {
 	ProductDao pd = new ProductDao();
 	public String storeProduct(Product product) {
