@@ -1,13 +1,15 @@
 package com.pms.dao;
 import java.sql.*;
 import com.pms.bean.*;
+import com.pms.resource.DbConnection;
 public class LoginDao {
 
 	
 	public String signIn(Login login) {
 		try {
-	Class.forName("com.mysql.cj.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/info","root","root@123");
+//Class.forName("com.mysql.cj.jdbc.Driver");
+//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/info","root","root@123");
+Connection con = DbConnection.getDbConnection();
 PreparedStatement pstmt = con.prepareStatement("select * from login where emailid = ? and password = ?");
 pstmt.setString(1,login.getEmailId());
 pstmt.setString(2,login.getPassword());
@@ -31,8 +33,9 @@ ResultSet rs = pstmt.executeQuery();
 	
 	public String signUp(Login login) {
 		try {
-	Class.forName("com.mysql.cj.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/info","root","root@123");
+//	Class.forName("com.mysql.cj.jdbc.Driver");
+//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/info","root","root@123");
+Connection con = DbConnection.getDbConnection();
 PreparedStatement pstmt = con.prepareStatement("insert into login values(?,?,?)");
 pstmt.setString(1,login.getEmailId());
 pstmt.setString(2,login.getPassword());
