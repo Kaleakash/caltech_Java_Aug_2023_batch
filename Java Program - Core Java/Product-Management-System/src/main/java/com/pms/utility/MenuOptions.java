@@ -2,6 +2,7 @@ package com.pms.utility;
 import java.util.*;
 import com.pms.bean.*;
 import com.pms.dao.*;
+import com.pms.service.LoginService;
 public class MenuOptions {
 	
 	static Scanner sc = new Scanner(System.in);
@@ -11,7 +12,7 @@ public class MenuOptions {
 	static String result;
 	
 	public static void loginMenuOption() {
-	LoginDao ld = new LoginDao();
+		LoginService ls = new LoginService();
 		do {
 			System.out.println("1:Sign In 2: Sign Up");
 			System.out.println("Plz enter your choice");
@@ -24,7 +25,7 @@ public class MenuOptions {
 			         System.out.println("Type of user");
 			         typeofuser = sc.next();
 			         Login ll1 = new Login(emailid,password,typeofuser);
-			         result = ld.signIn(ll1);
+			         result = ls.signIn(ll1);
 			         System.out.println(result);
 				    break;
 			case 2: System.out.println("Enter the emailid");
@@ -34,7 +35,7 @@ public class MenuOptions {
 	         		System.out.println("Type of user");
 	         		typeofuser = sc.next();
 	         		Login ll2 = new Login(emailid,password,typeofuser);
-	         		result = ld.signUp(ll2);
+	         		result = ls.signUp(ll2);
 	         		System.out.println(result);
 					break;
 				

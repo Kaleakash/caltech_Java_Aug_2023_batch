@@ -7,10 +7,10 @@ public class DbConnection {
 	static Connection con;
 	
 	// constructor it will called only once when we create the object 
-	// static block call only one once the class get loaded...
+	// static block call only one once when the class get loaded...
 	static {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			//Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/info","root","root@123");
 		} catch (Exception e) {
 			// TODO: handle exception
