@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
 			pw.println("failure try once again using get method");		// source + target 
 			rd2.include(request, response);
 		}
+		
 		response.setContentType("text/html");  // output consider as html not plain text
 	}
 
