@@ -24,4 +24,24 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminHome</display-name>
+    <servlet-name>AdminHome</servlet-name>
+    <servlet-class>com.AdminHome</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminHome</servlet-name>
+    <url-pattern>/AdminHome</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerHome</display-name>
+    <servlet-name>CustomerHome</servlet-name>
+    <servlet-class>com.CustomerHome</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerHome</servlet-name>
+    <url-pattern>/CustomerHome</url-pattern>
+  </servlet-mapping>
 </web-app>
