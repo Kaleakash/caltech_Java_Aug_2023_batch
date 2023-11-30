@@ -9,5 +9,6 @@
 <body>
 <h2>Employee Management System</h2>
 <a href="storeEmployee.jsp">Store Employee</a> |
+<a href="EmployeeController">View Employee</a> |
 </body>
 </html>

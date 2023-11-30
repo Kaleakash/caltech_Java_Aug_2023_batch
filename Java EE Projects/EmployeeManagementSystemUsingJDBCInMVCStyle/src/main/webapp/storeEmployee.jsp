@@ -17,6 +17,8 @@
 <input type="number" name="salary"><br/>
 <input type="submit" value="Store Employee"/>
 <input type="reset" value="reset"/>
+<br/>
+<a href="index.jsp">Back</a>
 </form>
 </body>
 </html>

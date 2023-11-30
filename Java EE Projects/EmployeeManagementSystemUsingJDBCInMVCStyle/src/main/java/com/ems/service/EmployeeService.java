@@ -1,5 +1,8 @@
 package com.ems.service;
 
+import java.util.Iterator;
+import java.util.List;
+
 import com.ems.bean.Employee;
 import com.ems.dao.EmployeeDao;
 
@@ -17,4 +20,16 @@ public class EmployeeService {
 			return "Employee record didn't store";
 		}
 	}
+	
+	public List<Employee> findAllEmployee() {
+		List<Employee> listOfEmp = ed.findAllEmployee();
+		Iterator<Employee> li = listOfEmp.iterator();
+		while(li.hasNext()) {
+			Employee emp = li.next();
+			emp.setSalary(emp.getSalary()+5000);
+		}
+		return listOfEmp;
+	}
+	
+	
 }
