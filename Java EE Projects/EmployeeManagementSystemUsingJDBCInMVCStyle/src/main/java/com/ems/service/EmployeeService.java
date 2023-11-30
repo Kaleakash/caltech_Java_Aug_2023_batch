@@ -31,5 +31,20 @@ public class EmployeeService {
 		return listOfEmp;
 	}
 	
+	public String updateEmployeeSalary(Employee emp) {
+			if(ed.updateEmployeeSalary(emp)>0) {
+				return "Updated salary successfully";
+			}else {
+				return "Salary didn't update";
+			}
+	}
+	
+	public String deleteEmployeeInfo(int id) {
+		if(ed.deleteEmployee(id)>0) {
+			return "Employee record deleted successfully";
+		}else {
+			return "Record didnt' delete";
+		}
+}
 	
 }

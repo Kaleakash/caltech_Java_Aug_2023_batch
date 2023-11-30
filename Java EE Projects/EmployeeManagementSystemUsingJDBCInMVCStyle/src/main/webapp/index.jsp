@@ -10,5 +10,7 @@
 <h2>Employee Management System</h2>
 <a href="storeEmployee.jsp">Store Employee</a> |
 <a href="EmployeeController">View Employee</a> |
+<a href="employeeDelete.jsp">Delete Employee</a> |
+<a href="employeeUpdate.jsp">Update Employee</a> |
 </body>
 </html>

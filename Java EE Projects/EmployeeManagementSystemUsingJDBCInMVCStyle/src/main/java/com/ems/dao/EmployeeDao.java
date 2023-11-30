@@ -25,6 +25,31 @@ public class EmployeeDao {
 		}
 	}
 	
+	public int updateEmployeeSalary(Employee emp) {
+		try {
+		Connection con  = DbResource.getDbConnection();
+		PreparedStatement pstmt = con.prepareStatement("update employee set salary = ? where id=?");
+		pstmt.setInt(2, emp.getId());
+		pstmt.setFloat(1, emp.getSalary());
+		return pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.err.println(e);
+			return 0;
+		}
+	}
+	
+	public int deleteEmployee(int id) {
+		try {
+		Connection con  = DbResource.getDbConnection();
+		PreparedStatement pstmt = con.prepareStatement("delete from employee where id =?");
+		pstmt.setInt(1, id);
+		return pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.err.println(e);
+			return 0;
+		}
+	}
+	
 	public List<Employee> findAllEmployee() {
 		List<Employee> listEmployee  = new ArrayList<>();
 		try {
