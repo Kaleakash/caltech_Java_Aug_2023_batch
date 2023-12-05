@@ -1,5 +1,8 @@
 package com;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Java11Features {
 
 	public static void main(String[] args) {
@@ -13,6 +16,12 @@ public class Java11Features {
 	System.out.println(info.length());
 	System.out.println(info.isBlank());
 	msg.lines().forEach(e->System.out.println(e));
+	List<String> names = Arrays.asList("Ravi","Ramesh","Lex","Rajesh","Lokesh");
+	//names.stream().forEach((name)->System.out.println(name));
+	//names.stream().forEach((String name)->System.out.println(name));
+	names.stream().forEach((var name)->System.out.println(name));
+	var name="Akash";
+	System.out.println(name);
 	}
 
 }
