@@ -13,7 +13,8 @@ public class IOOperation {
 //	Files.writeString(filePath, msg);
 //	System.out.println("Data stored in file successfully");
 	// Read Operation 
-	Path filePath = Paths.get("demo.txt");
+	//Path filePath = Paths.get("demo.txt");
+	Path filePath = Paths.get("C:\\Users\\akash\\Desktop\\JavaProgram\\Demo.java");	
 	String data = Files.readString(filePath);
 	System.out.println(data);
 	}
