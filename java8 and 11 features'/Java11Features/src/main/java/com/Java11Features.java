@@ -21,6 +21,8 @@ public class Java11Features {
 	//names.stream().forEach((String name)->System.out.println(name));
 	names.stream().forEach((var name)->System.out.println(name));
 	var name="Akash";
+	name="Ravi";
+	//name=100;
 	System.out.println(name);
 	}
 
