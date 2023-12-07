@@ -69,4 +69,25 @@ public class EmployeeDao {
 		return listEmployee;
 	}
 	
+	public Employee findEmployeeById(int id) {
+		
+		try {
+		Connection con  = DbResource.getDbConnection();
+		PreparedStatement pstmt = con.prepareStatement("select * from employee where id =?");
+		pstmt.setInt(1, id);
+		ResultSet rs = pstmt.executeQuery();
+		if(rs.next()) {
+			Employee emp = new Employee();
+			emp.setId(rs.getInt("id"));
+			emp.setName(rs.getString("name"));
+			emp.setSalary(rs.getFloat("salary"));  // convert each record to object ie employee
+			return emp;
+		}
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		return null;
+	}
+	
+	
 }

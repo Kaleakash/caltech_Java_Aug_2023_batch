@@ -10,6 +10,10 @@ public class EmployeeService {
 	
 	EmployeeDao ed = new EmployeeDao();
 	
+	
+	public Employee findEmployeeById(int id) {
+		return ed.findEmployeeById(id);
+	}
 	public String storeEmployee(Employee emp) {
 		
 		if(emp.getSalary()<=20000) {
