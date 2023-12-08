@@ -1,0 +1,55 @@
+<div class="container">
+    <form class="form-group" [formGroup]="loginRef" (ngSubmit)="checkLoginDetails()">
+        <div class="row offset-3">
+            <div class="col-6">
+                 <h3>Login page</h3>  
+            </div>  
+       </div>
+        
+       <div class="row offset-3">
+             <div class="col-3">
+                  <label>EmailId</label>  
+             </div>  
+             <div class="col-3">
+               <input type="email" class="form-control" formControlName="email"/>
+           </div>   
+        </div>
+
+
+        <div class="row offset-3">
+            <div class="col-3">
+                 <label>Password</label>  
+            </div>  
+            <div class="col-3">
+              <input type="password" class="form-control" formControlName="password"/>
+          </div>   
+       </div>
+
+       <div class="row offset-3">
+        <div class="col-3">
+             <label>TypeOfUser</label>  
+        </div>  
+        <div class="col-3">
+          <input type="radio" value="admin" formControlName="typeofuser"/>Admin
+          <input type="radio" value="customer" formControlName="typeofuser"/>Customer
+      </div>   
+   </div>
+
+   <div class="row offset-3">
+    <div class="col-3">
+         <input type="submit" value="SignIn" class="btn btn-success"/>
+    </div>  
+    <div class="col-3">
+        <input type="reset" value="Reset" class="btn btn-secondary"/>
+  </div>   
+</div>
+
+    </form>
+
+    <div class="row offset-3">
+        <div class="col-6">
+        <a routerLink="signUp">SignUp</a> 
+        </div>  
+   </div>
+</div>
+
