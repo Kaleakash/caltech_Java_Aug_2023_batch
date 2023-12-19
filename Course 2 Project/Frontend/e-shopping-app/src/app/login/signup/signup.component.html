@@ -1,8 +1,8 @@
 <div class="container">
-    <form class="form-group" [formGroup]="loginRef" (ngSubmit)="checkLoginDetails()">
+    <form class="form-group" [formGroup]="loginRef" (ngSubmit)="signUp()">
         <div class="row offset-3">
             <div class="col-6">
-                 <h3>Login page</h3>  
+                 <h3>SignUp page</h3>  
             </div>  
        </div>
         
@@ -37,7 +37,7 @@
 
    <div class="row offset-3">
     <div class="col-3">
-         <input type="submit" value="SignIn" class="btn btn-success"/>
+         <input type="submit" value="SignUp" class="btn btn-success"/>
     </div>  
     <div class="col-3">
         <input type="reset" value="Reset" class="btn btn-secondary"/>
@@ -48,7 +48,7 @@
 
     <div class="row offset-3">
         <div class="col-6">
-        <a routerLink="signup">SignUp</a> 
+        <a routerLink="/">Login</a> 
         </div>  
    </div>
    <span style="color:red">{{result}}</span>
