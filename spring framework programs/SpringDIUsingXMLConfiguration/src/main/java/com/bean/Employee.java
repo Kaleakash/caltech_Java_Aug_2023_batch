@@ -4,6 +4,7 @@ public class Employee {
 private int id;
 private String name;
 private float salary;
+private Address add;			// employee has a address. 
 
 	public Employee() {
 		System.out.println("object created...empty constructor");
@@ -22,6 +23,14 @@ private float salary;
 		System.out.println("id is "+id);
 		System.out.println("name is "+name);
 		System.out.println("salary  is "+salary);
+	}
+
+	public Address getAdd() {
+		return add;
+	}
+
+	public void setAdd(Address add) {
+		this.add = add;
 	}
 
 	public int getId() {

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
+import com.bean.Address;
 import com.bean.Employee;
 
 public class DemoTest {
@@ -28,19 +29,22 @@ public class DemoTest {
 		//Employee e4 = (Employee)obj.getBean("emp2");	// pull the object from a container 
 		//e4.display();
 		
-		Employee emp5 = (Employee)obj.getBean("emp1");
-		emp5.display();
+//		Employee emp5 = (Employee)obj.getBean("emp1");
+//		emp5.display();
+//		
+//		Employee emp6 = (Employee)obj.getBean("emp2");
+//		emp6.display();
+//		
+//		Employee emp7 = (Employee)obj.getBean("emp3");
+//		emp7.display();
+//		
+//		Employee emp8 = (Employee)obj.getBean("emp4");
+//		emp8.display();
 		
-		Employee emp6 = (Employee)obj.getBean("emp2");
-		emp6.display();
-		
-		Employee emp7 = (Employee)obj.getBean("emp3");
-		emp7.display();
-		
-		Employee emp8 = (Employee)obj.getBean("emp4");
-		emp8.display();
-		
-		
+		Employee emp9 = (Employee)obj.getBean("employee");
+		emp9.display();
+		Address add = emp9.getAdd();
+		System.out.println(add.getCity()+" "+add.getState());
 	}
 
 }
