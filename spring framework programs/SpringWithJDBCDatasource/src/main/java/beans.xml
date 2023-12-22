@@ -5,9 +5,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+<!-- Enable @Component, @Service and @Repository annotation -->
+
 <context:component-scan base-package="com"></context:component-scan>
 
-<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="db" scope="singleton">
+<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="db" 
+scope="singleton">
 	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
 	<property name="url" value="jdbc:mysql://localhost:3306/caltech_course3_db"></property>
 	<property name="username" value="root"></property>
