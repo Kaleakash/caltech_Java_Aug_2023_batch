@@ -15,6 +15,7 @@ public class LoginController {
 	
 		String emailid = req.getParameter("emailid");
 		String password = req.getParameter("password");
+		
 		ModelAndView mav = new ModelAndView();
 		if(emailid.equals("akash@gmail.com") && password.equals("akash@123")) {
 			mav.setViewName("success.jsp");
