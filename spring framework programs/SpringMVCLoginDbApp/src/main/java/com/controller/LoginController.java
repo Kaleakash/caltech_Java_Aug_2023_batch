@@ -1,6 +1,8 @@
 package com.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +20,7 @@ public class LoginController {
 	LoginService loginService;
 	
 	@RequestMapping(value = "signIn",method = RequestMethod.POST)
-	public ModelAndView signIn(HttpServletRequest req,Login login) {  // DI for request and login object. 
+	public ModelAndView signIn(HttpServletRequest req,Login login,HttpSession hs) {  // DI for request and login object. 
 		
 		String emailid= req.getParameter("emailid");
 		String password = req.getParameter("password");
@@ -27,7 +29,7 @@ public class LoginController {
 		login.setPassword(password);
 		
 		ModelAndView mav = new ModelAndView();
-		
+		hs.setAttribute("user", emailid);
 		String result = loginService.signIn(login);
 		
 		System.out.println(result);
