@@ -1,5 +1,10 @@
 package com.main;
 
+import java.util.Iterator;
+import java.util.List;
+
+import javax.persistence.TypedQuery;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -59,11 +64,23 @@ public class DemoTest {
 //		}
 	// Retrieve single record using primary key 
 	
-	Employee emp = session.find(Employee.class, 101);
-	if(emp==null) {
-		System.out.println("Record not present");
-	}else {
-		System.out.println(emp);  // it will call toString method to display the record 
+//	Employee emp = session.find(Employee.class, 101);
+//	if(emp==null) {
+//		System.out.println("Record not present");
+//	}else {
+//		System.out.println(emp);  // it will call toString method to display the record 
+//	}
+	// Retrieve more than one record 
+	// DAO layer code 
+	TypedQuery<Employee> qry = session.createQuery("select emp from Employee emp");
+	List<Employee> listOfEmp = qry.getResultList();  // directly converted to list of object 
+	
+	// View layer code 
+	System.out.println("Number of records "+listOfEmp.size());
+	Iterator<Employee> li = listOfEmp.iterator();
+	while(li.hasNext()) {
+		Employee e = li.next();
+		System.out.println(e);
 	}
 	}
 }
