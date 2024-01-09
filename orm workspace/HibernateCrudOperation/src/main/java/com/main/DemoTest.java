@@ -38,26 +38,32 @@ public class DemoTest {
 //		System.out.println("Record not present");
 //	}else {
 //		tran.begin();
-//		session.delete(emp);
+//		session.delete(emp);		// delete from employee where id = 100
 //		tran.commit();
 //		System.out.println("Record deleted");
 //	}
 	
 	// Update Query 
-		Employee emp = session.find(Employee.class, 101);
-		if(emp==null) {
-			System.out.println("Record not present");
-		}else {
-			tran.begin();
-			
-			emp.setSalary(35000);
-			
-			session.update(emp);
-			
-			tran.commit();
-			System.out.println("Record updated");
-		}
-		
+//		Employee emp = session.find(Employee.class, 101);
+//		if(emp==null) {
+//			System.out.println("Record not present");
+//		}else {
+//			tran.begin();
+//			
+//			emp.setSalary(35000);
+//			
+//			session.update(emp);	// update employee set salary = 35000 where id=101
+//			
+//			tran.commit();
+//			System.out.println("Record updated");
+//		}
+	// Retrieve single record using primary key 
+	
+	Employee emp = session.find(Employee.class, 101);
+	if(emp==null) {
+		System.out.println("Record not present");
+	}else {
+		System.out.println(emp);  // it will call toString method to display the record 
 	}
-
+	}
 }
