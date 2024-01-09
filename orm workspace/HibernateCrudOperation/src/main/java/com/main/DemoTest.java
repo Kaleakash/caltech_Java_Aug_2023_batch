@@ -2,6 +2,7 @@ package com.main;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.persistence.TypedQuery;
 
@@ -70,9 +71,18 @@ public class DemoTest {
 //	}else {
 //		System.out.println(emp);  // it will call toString method to display the record 
 //	}
+	Scanner sc = new Scanner(System.in);
+	
 	// Retrieve more than one record 
 	// DAO layer code 
-	TypedQuery<Employee> qry = session.createQuery("select emp from Employee emp");
+	//TypedQuery<Employee> qry = session.createQuery("select emp from Employee emp");
+	// Static value 
+	//TypedQuery<Employee> qry = session.createQuery("select emp from Employee emp where emp.id=101");
+	//dynamic value usign label parameter 
+	System.out.println("Enter the id");
+	int id = sc.nextInt();
+	TypedQuery<Employee> qry = session.createQuery("select emp from Employee emp where emp.id=:empid");
+	qry.setParameter("empid", id);
 	List<Employee> listOfEmp = qry.getResultList();  // directly converted to list of object 
 	
 	// View layer code 
