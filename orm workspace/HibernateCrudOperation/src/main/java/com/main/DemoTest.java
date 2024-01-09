@@ -15,20 +15,49 @@ public class DemoTest {
 	System.out.println("file loaded...");
 	SessionFactory sf = con.buildSessionFactory();// like Connection 
 	Session session = sf.openSession();		// LIke Statement or PreparedStatmenet 
-	
-	Employee emp = new Employee();
-	emp.setId(102);
-	emp.setName("Steven");
-	emp.setSalary(34000);
 	Transaction tran = session.getTransaction();
 	
+	// Insert Query 
+//	Employee emp = new Employee();
+//	emp.setId(102);
+//	emp.setName("Steven");
+//	emp.setSalary(34000);
+//	
+//	
+//	
+//			tran.begin();
+//			
+//			session.save(emp);
+//			
+//			tran.commit();
+//			System.out.println("Employee record stored...");
+	
+//	// Delete Query 
+//	Employee emp = session.find(Employee.class, 100);
+//	if(emp==null) {
+//		System.out.println("Record not present");
+//	}else {
+//		tran.begin();
+//		session.delete(emp);
+//		tran.commit();
+//		System.out.println("Record deleted");
+//	}
+	
+	// Update Query 
+		Employee emp = session.find(Employee.class, 101);
+		if(emp==null) {
+			System.out.println("Record not present");
+		}else {
 			tran.begin();
 			
-			session.save(emp);
+			emp.setSalary(35000);
+			
+			session.update(emp);
 			
 			tran.commit();
-			System.out.println("Employee record stored...");
-			
+			System.out.println("Record updated");
+		}
+		
 	}
 
 }
