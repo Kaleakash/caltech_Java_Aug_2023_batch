@@ -26,7 +26,7 @@
 	
 	<property name="hibernateProperties">
 		<props>
-			<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+			<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
 			<prop key="hibernate.hbm2ddl.auto">update</prop>
 		</props>
 	</property>

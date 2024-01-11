@@ -32,7 +32,7 @@ public class ProductController {
 		String result = productService.storeProduct(product);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("msg", result);
+		mav.addObject("msg", result);			// req.setAttribute("msg",result);
 		mav.setViewName("storeProduct.jsp");
 		return mav;
 		
