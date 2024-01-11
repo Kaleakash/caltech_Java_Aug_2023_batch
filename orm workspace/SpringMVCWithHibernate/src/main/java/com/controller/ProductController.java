@@ -42,6 +42,7 @@ public class ProductController {
 	public ModelAndView findAllProducts(HttpSession hs) {
 		ModelAndView mav = new ModelAndView();
 		List<Product> listOfProducts = productService.findAllProduct();
+	System.out.println("Number of product "+listOfProducts.size());
 		//mav.addObject("products", listOfProducts);
 		hs.setAttribute("products", listOfProducts);
 		mav.setViewName("displayProduct.jsp");

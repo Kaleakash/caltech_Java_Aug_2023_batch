@@ -8,6 +8,7 @@
 </head>
 <body>
 <h2>Product Management System Using Spring MVC with Hibernate</h2>
-<a href="storeProduct.jsp">Add Product</a>
+<a href="storeProduct.jsp">Add Product</a> |
+<a href="findAllProducts">View Product</a>
 </body>
 </html>
