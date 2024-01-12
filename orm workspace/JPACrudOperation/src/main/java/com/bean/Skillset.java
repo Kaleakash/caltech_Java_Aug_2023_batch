@@ -30,5 +30,9 @@ public Integer getEsid() {
 public void setEsid(Integer esid) {
 	this.esid = esid;
 }
+@Override
+public String toString() {
+	return "Skillset [ssid=" + ssid + ", sname=" + sname + ", esid=" + esid + "]";
+}
 
 }

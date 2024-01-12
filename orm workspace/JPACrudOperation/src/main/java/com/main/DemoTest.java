@@ -76,24 +76,24 @@ public class DemoTest {
 	
 		// one to many relationship 
 //		Employee emp1 = new Employee();
-//		
-//		emp1.setId(101);
-//		emp1.setName("John");
-//		emp1.setSalary(36000);
-//
+//	
+//		emp1.setId(103);
+//		emp1.setName("Ajay");
+//		emp1.setSalary(28000);
+////
 //		Skillset s1 = new Skillset();
-//		s1.setSname("Java");
+//		s1.setSname("HTML");
 //		s1.setEsid(101);    //FK
 //		
 //		Skillset s2 = new Skillset();
-//		s2.setSname("React JS");
+//		s2.setSname("CSS");
 //		s2.setEsid(101);
 //	
 //		List<Skillset> listOfSkillset = new ArrayList<>();
 //		listOfSkillset.add(s1);
 //		listOfSkillset.add(s2);
 //		
-//		emp1.setListOfSkillset(listOfSkillset);
+//		//emp1.setListOfSkillset(listOfSkillset);
 //		
 //		tran.begin();
 //			manager.persist(emp1);		// employee record 
@@ -103,15 +103,25 @@ public class DemoTest {
 //		System.out.println("Employee record inserted");
 	
 		// Delete employee record as well as skillset record 
-		Employee emp = manager.find(Employee.class, 101);
-		if(emp==null) {
-			System.out.println("Record not present");
-		}else {
-			tran.begin();
-				manager.remove(emp);
-			tran.commit();
-			System.out.println("Employee record deleted successfully");
+//		Employee emp = manager.find(Employee.class, 101);
+//		if(emp==null) {
+//			System.out.println("Record not present");
+//		}else {
+//			tran.begin();
+//				manager.remove(emp);
+//			tran.commit();
+//			System.out.println("Employee record deleted successfully");
+//		}
+	
+		// retrieve employee and skillset table records without join 
+		Query qry = manager.createQuery("select emp from Employee emp");
+		List<Employee> listOfEmp = qry.getResultList();
+		Iterator<Employee> li = listOfEmp.iterator();
+		while(li.hasNext()) {
+			Employee emp = li.next();
+			System.out.println(emp);
 		}
+	
 	}
 
 }
