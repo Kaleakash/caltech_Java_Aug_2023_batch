@@ -75,32 +75,43 @@ public class DemoTest {
 //		}
 	
 		// one to many relationship 
-		Employee emp1 = new Employee();
-		
-		emp1.setId(101);
-		emp1.setName("John");
-		emp1.setSalary(36000);
-
-		Skillset s1 = new Skillset();
-		s1.setSname("Java");
-		s1.setEsid(101);    //FK
-		
-		Skillset s2 = new Skillset();
-		s2.setSname("React JS");
-		s2.setEsid(101);
+//		Employee emp1 = new Employee();
+//		
+//		emp1.setId(101);
+//		emp1.setName("John");
+//		emp1.setSalary(36000);
+//
+//		Skillset s1 = new Skillset();
+//		s1.setSname("Java");
+//		s1.setEsid(101);    //FK
+//		
+//		Skillset s2 = new Skillset();
+//		s2.setSname("React JS");
+//		s2.setEsid(101);
+//	
+//		List<Skillset> listOfSkillset = new ArrayList<>();
+//		listOfSkillset.add(s1);
+//		listOfSkillset.add(s2);
+//		
+//		emp1.setListOfSkillset(listOfSkillset);
+//		
+//		tran.begin();
+//			manager.persist(emp1);		// employee record 
+//			//manager.persist(s1);		// skill record 
+//			//manager.persist(s2);		// skill record 
+//		tran.commit();
+//		System.out.println("Employee record inserted");
 	
-		List<Skillset> listOfSkillset = new ArrayList<>();
-		listOfSkillset.add(s1);
-		listOfSkillset.add(s2);
-		
-		emp1.setListOfSkillset(listOfSkillset);
-		
-		tran.begin();
-			manager.persist(emp1);		// employee record 
-			//manager.persist(s1);		// skill record 
-			//manager.persist(s2);		// skill record 
-		tran.commit();
-		System.out.println("Employee record inserted");
+		// Delete employee record as well as skillset record 
+		Employee emp = manager.find(Employee.class, 101);
+		if(emp==null) {
+			System.out.println("Record not present");
+		}else {
+			tran.begin();
+				manager.remove(emp);
+			tran.commit();
+			System.out.println("Employee record deleted successfully");
+		}
 	}
 
 }
