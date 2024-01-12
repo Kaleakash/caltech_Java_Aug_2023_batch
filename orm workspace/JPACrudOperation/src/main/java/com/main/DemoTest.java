@@ -1,9 +1,13 @@
 package com.main;
 
+import java.util.Iterator;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import org.hibernate.Session;
 
@@ -40,17 +44,33 @@ public class DemoTest {
 //	}
 	
 	// Update Query 
-		Employee emp = manager.find(Employee.class, 102);
-		if(emp==null) {
-			System.out.println("Record not present");
-		}else {
-			tran.begin();
-				emp.setSalary(45000);
-				manager.merge(emp);			// like update 
-			tran.commit();
-			System.out.println("Record updated successfully");
+//		Employee emp = manager.find(Employee.class, 102);
+//		if(emp==null) {
+//			System.out.println("Record not present");
+//		}else {
+//			tran.begin();
+//				emp.setSalary(45000);
+//				manager.merge(emp);			// like update 
+//			tran.commit();
+//			System.out.println("Record updated successfully");
+//		}
+	// Retrieve the record using id 
+//	Employee emp = manager.find(Employee.class, 102);
+//	if(emp==null) {
+//		System.out.println("Record not present");
+//	}else {
+//		System.out.println(emp);
+//	}
+		// Retrieve more than one record
+		Query	qry	= manager.createQuery("select emp from Employee emp");		// JPQL 
+		List<Employee> listOfEmp = qry.getResultList();
+		System.out.println("Number of records are "+listOfEmp.size());
+		System.out.println("All record ");
+		Iterator<Employee> li = listOfEmp.iterator();
+		while(li.hasNext()) {
+			Employee emp = li.next();
+			System.out.println(emp);
 		}
-		
 	}
 
 }
