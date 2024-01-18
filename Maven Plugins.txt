@@ -295,7 +295,6 @@ spring MVC with Hibernate configuration
 	<property name="hibernateProperties">
 		<props>
 			<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-			<prop key="hibernate.hbm2ddl.auto">update</prop>
 		</props>
 	</property>
 	
@@ -309,12 +308,16 @@ spring MVC with jpa configuration
 	<property name="username" value="system"></property>
 	<property name="password" value="Welcome123"></property>
 </bean>
+
 <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 <property name="dataSource" ref="ds"></property>
 <property name="jpaVendorAdapter" ref="jpaVendor"></property>
 <property name="packagesToScan" value="com.bean"></property>
 </bean>
 
+<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" id="jpaVendor">
+	
+</bean>
 
 Two dependenices for convert java object to json or xml 
 
