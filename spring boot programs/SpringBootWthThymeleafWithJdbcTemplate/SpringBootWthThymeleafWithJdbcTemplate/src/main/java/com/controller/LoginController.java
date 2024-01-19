@@ -18,16 +18,33 @@ public class LoginController {
 	
 	@RequestMapping(value = "/",method = RequestMethod.GET)
 	public String login(Model model,Login login) {  // DI for Model API part of spring boot
-		System.out.println("I Came Here");	// model is like ModelAndView class reference 
-		model.addAttribute("ll", login);   // store login object in model scope. 
+		System.out.println("Login Page open");	// model is like ModelAndView class reference 
+			model.addAttribute("ll", login);   // store login object in model scope. 
 		return "login";
 	}
 	
 	@RequestMapping(value = "/checkLogin",method = RequestMethod.POST)
-	public String signIn(Model model,Login login) {  // DI for Model API part of spring boot
-		System.out.println(login.getEmailid()+" "+login.getPassword());
-		model.addAttribute("ll", login);   // store login object in model scope. 
-		String result = loginService.signIn(login);
-		return result;
+	public String signIn(Login login) {  // DI for Model API part of spring boot
+		 
+		return loginService.signIn(login);
 	}
+	
+	
+	@RequestMapping(value = "/signUpPage",method = RequestMethod.GET)
+	public String signUpOpen(Model model,Login login) {  // DI for Model API part of spring boot
+		System.out.println("SigUp Page Open");	// model is like ModelAndView class reference 
+			model.addAttribute("ll", login);   // store login object in model scope. 
+		return "signUp";
+	}
+	
+	
+	@RequestMapping(value = "/accountCreate",method = RequestMethod.POST)
+	public String signUp(Model model,Login login) {  // DI for Model API part of spring boot
+		System.out.println("Account Created...");	// model is like ModelAndView class reference 
+			model.addAttribute("ll", login);   // store login object in model scope. 
+			String result = loginService.signUp(login);
+			model.addAttribute("msg", result);
+		return "signUp";
+	}
+	
 }

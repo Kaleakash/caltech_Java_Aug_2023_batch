@@ -6,16 +6,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Login Page</h2>
-<form action="#" th:action="@{/checkLogin}" method="post" th:object="${ll}">
+<h2>Account Create</h2>
+<form action="#" th:action="@{/accountCreate}" method="post" th:object="${ll}">
 	<label>EmailId</label>
 	<input type="text" th:field="*{emailid}"/><br/>
 	<label>Password</label>
 	<input type="password" th:field="*{password}"/><br/>
-	<input type="submit" value="signIn"/>
+	<input type="submit" value="signUp"/>
 	<input type="reset" value="reset"/>
 </form>
 <br/>
-<a href="signUpPage">SignUp!</a>
+<a href="/">Login Page</a>
 </body>
 </html>
