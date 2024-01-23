@@ -36,5 +36,6 @@ public class ProductController {
 	public String storeProduct(@RequestBody Product product) {
 		System.out.println(product);
 		return productService.storeProduct(product);
+		//return "done";
 	}
 }
