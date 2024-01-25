@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,4 +39,13 @@ public class ProductController {
 		return productService.storeProduct(product);
 		//return "done";
 	}
+	
+	// http://localhost:8080/deleteProduct/1
+	// http://localhost:8080/deleteProduct/100
+	@RequestMapping(value = "deleteProduct/{pid}",method = RequestMethod.DELETE)
+	public String deleteProduct(@PathVariable("pid") int pid) {
+		return productService.deleteProduct(pid);
+	}
+	
 }
+
