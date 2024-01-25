@@ -1,6 +1,7 @@
 package com.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,4 +43,10 @@ public class OrdersService {
 			return "Your order not placed successfully because product not present";
 		}
 	}
+	
+	public List<Orders> findAllOrders() {
+		return ordersRepository.findAll();
+	}
+	
+	
 }
