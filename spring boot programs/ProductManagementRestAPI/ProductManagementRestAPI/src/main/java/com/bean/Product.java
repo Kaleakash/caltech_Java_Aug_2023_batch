@@ -1,9 +1,14 @@
 package com.bean;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 
 @Entity							// @entity part of jakarta previously part of javax in spring boot 3.x version 
 public class Product {
@@ -12,6 +17,16 @@ public class Product {
 private int pid;
 private String pname;
 private float price;
+private int qty;
+@OneToMany(cascade = CascadeType.ALL)
+@JoinColumn(name = "pid")				// link to FK in orders table. 
+private List<Orders> listOfOrders;
+public int getQty() {
+	return qty;
+}
+public void setQty(int qty) {
+	this.qty = qty;
+}
 public int getPid() {
 	return pid;
 }
