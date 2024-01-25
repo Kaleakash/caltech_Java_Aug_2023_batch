@@ -12,7 +12,7 @@ import jakarta.persistence.OneToMany;
 
 @Entity							// @entity part of jakarta previously part of javax in spring boot 3.x version 
 public class Product {
-@Id
+@Id						// PK with auto increment 
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int pid;
 private String pname;

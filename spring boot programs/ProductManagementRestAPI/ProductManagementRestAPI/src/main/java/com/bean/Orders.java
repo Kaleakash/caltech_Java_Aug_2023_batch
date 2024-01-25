@@ -11,8 +11,8 @@ import jakarta.persistence.Id;
 public class Orders {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private int oid;
-private int pid;
+private int oid;					// PK with auto increment 
+private int pid;					// FK 
 private LocalDateTime ldt;
 private int qty;
 private int total;
