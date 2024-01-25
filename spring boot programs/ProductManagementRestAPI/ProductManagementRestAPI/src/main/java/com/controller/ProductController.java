@@ -47,5 +47,21 @@ public class ProductController {
 		return productService.deleteProduct(pid);
 	}
 	
+		// http://localhost:8080/updateProduct  ie URL 
+		// method must put 
+		// data through body part in json format {"pid":1,"price":56000}
+		@RequestMapping(value = "updateProduct",
+				consumes = MediaType.APPLICATION_JSON_VALUE,
+				method = RequestMethod.PUT)
+		public String updateProduct(@RequestBody Product product) {
+			System.out.println(product);
+			return productService.updateProduct(product);
+		}
+		// http://localhost:8080/findProduct/1
+		//  http://localhost:8080/findProduct/100
+		@RequestMapping(value = "findProduct/{pid}",method = RequestMethod.GET)
+		public String findProduct(@PathVariable("pid") int pid) {
+			return productService.findProduct(pid);
+		}
 }
 
