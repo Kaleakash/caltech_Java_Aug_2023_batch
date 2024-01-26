@@ -33,7 +33,7 @@ public class AccountController {
 	
 	// http://localhost:8383/account/findBalance/123
 	// method get 
-	@GetMapping(consumes = "findBalance/{accno}")
+	@GetMapping(value = "findBalance/{accno}")
 	public String findBalance(@PathVariable("accno") int accno) {
 		return accountService.findBalance(accno);
 	}
