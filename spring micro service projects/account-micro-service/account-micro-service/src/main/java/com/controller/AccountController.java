@@ -21,7 +21,7 @@ public class AccountController {
 	@Autowired
 	AccountService accountService;
 	
-	// http://localhost:8383/account/createAccount 
+	// http://localhost:8282/account/createAccount 
 	// method post 
 	// data {"accno":123,"name":"Steven","amount":1000,"emailid":"steven@gmail.com"}
 	
@@ -31,7 +31,7 @@ public class AccountController {
 		return accountService.createAccount(account);		
 	}
 	
-	// http://localhost:8383/account/findBalance/123
+	// http://localhost:8282/account/findBalance/123
 	// method get 
 	@GetMapping(value = "findBalance/{accno}")
 	public String findBalance(@PathVariable("accno") int accno) {
