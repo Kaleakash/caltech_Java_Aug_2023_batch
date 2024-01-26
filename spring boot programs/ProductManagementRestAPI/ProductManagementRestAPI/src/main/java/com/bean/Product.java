@@ -57,7 +57,14 @@ public Product(int pid, String pname, float price) {
 }
 @Override
 public String toString() {
-	return "Product [pid=" + pid + ", pname=" + pname + ", price=" + price + "]";
+	return "Product [pid=" + pid + ", pname=" + pname + ", price=" + price + ", qty=" + qty + ", listOfOrders="
+			+ listOfOrders + "]";
+}
+public List<Orders> getListOfOrders() {
+	return listOfOrders;
+}
+public void setListOfOrders(List<Orders> listOfOrders) {
+	this.listOfOrders = listOfOrders;
 }
 
 }
