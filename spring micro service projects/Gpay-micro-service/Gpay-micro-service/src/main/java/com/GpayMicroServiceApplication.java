@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.client.RestTemplate;
@@ -20,6 +21,7 @@ public class GpayMicroServiceApplication {
 	}
 
 	@Bean		// maintain by container. method name can be anything but @bean must be present
+	@LoadBalanced
 	public RestTemplate restTemplate() {
 		System.out.println("I Came here");
 		return new RestTemplate();		// we are creating object 

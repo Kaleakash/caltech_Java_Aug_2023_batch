@@ -38,10 +38,19 @@ public class GpayService {
 		if(op.isPresent()) {
 			Gpay gp = op.get();
 			// we are calling account micro service with help of gpay micro service. 
-			return restTemplate.getForObject("http://localhost:8282/account/findBalanceByEmailid/"+gp.getEmailid(), String.class);
+			//return restTemplate.getForObject("http://198.45.67.12:8282/account/findBalanceByEmailid/"+gp.getEmailid(), String.class);
+			//return restTemplate.getForObject("http://localhost:8282/account/findBalanceByEmailid/"+gp.getEmailid(), String.class);
+			return restTemplate.getForObject("http://ACCOUNT-SERVICE/account/findBalanceByEmailid/"+gp.getEmailid(), String.class);
 			//return "Your emailid is "+gp.getEmailid();
 		}else {
 			return "Gpay account not exists";
 		}
 	}
 }
+
+
+
+
+
+
+
