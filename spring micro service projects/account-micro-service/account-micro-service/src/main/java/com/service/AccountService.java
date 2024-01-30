@@ -33,4 +33,13 @@ public class AccountService {
 			return "Account not exists";
 		}
 	}
+	
+	public String findBalanceByEmailId(String emailid) {
+		try {
+		float balance = accountRepository.findAccountByEmailId(emailid);
+		return "Your account balance is "+balance;
+		}catch(Exception e) {
+			return "Account not exists";
+		}
+	}
 }

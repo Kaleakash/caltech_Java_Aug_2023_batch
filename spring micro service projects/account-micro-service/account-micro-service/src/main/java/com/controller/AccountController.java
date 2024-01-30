@@ -38,4 +38,11 @@ public class AccountController {
 		return accountService.findBalance(accno);
 	}
 	
+	
+	// http://localhost:8282/account/findBalanceByEmailid/steven@gmail.com
+		// method get 
+		@GetMapping(value = "findBalanceByEmailid/{emailid}")
+		public String findBalanceUsingEmailId(@PathVariable("emailid") String emailid) {
+			return accountService.findBalanceByEmailId(emailid);
+		}
 }
