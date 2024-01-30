@@ -35,4 +35,13 @@ public class GpayController {
 	public String findEmailiId(@PathVariable("gpayid") int gpayid) {
 		return gpayService.findGpayDetails(gpayid);
 	}
+	
+	
+	// http://localhost:8383/gpay/findBalance/1
+		// method get 
+		
+		@GetMapping(value = "findBalance/{gpayid}")
+		public String findBalance(@PathVariable("gpayid") int gpayid) {
+			return gpayService.findAccountBalance(gpayid);
+		}
 }
