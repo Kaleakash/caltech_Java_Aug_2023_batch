@@ -11,8 +11,8 @@ public class EmployeeService {
 		// we can all dao method and interact with database. 
 		Employee emp1 = new Employee(100, "Steven", 12000);
 		return emp1;
+		//return null;
 	}
-	
 	public List<Employee> findAllEmployees() {
 		// we can all dao method and interact with database. 
 		Employee emp1 = new Employee(100, "Steven", 12000);
@@ -28,7 +28,6 @@ public class EmployeeService {
 		// logic or condition ;
 		return emp.getSalary()+5000;
 	}
-	
 	
 	public boolean checkLogin(String emailid,String password) {
 		// we can check logic details from db 
