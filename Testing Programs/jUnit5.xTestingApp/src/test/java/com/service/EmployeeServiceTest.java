@@ -32,7 +32,7 @@ class EmployeeServiceTest {
 	}
 
 	@Test
-	@Disabled
+	//@Disabled
 	void testGetEmployee() {
 		//fail("Not yet implemented");
 		EmployeeService es = new EmployeeService();
@@ -44,6 +44,7 @@ class EmployeeServiceTest {
 	}
 
 	@Test
+	//@Disabled
 	void testFindAllEmployees() {
 		//fail("Not yet implemented");
 		EmployeeService es = new EmployeeService();
@@ -56,15 +57,24 @@ class EmployeeServiceTest {
 	}
 
 	@Test
-	@Disabled
 	void testUpdateSalary() {
-		fail("Not yet implemented");
+		Employee emp = new Employee();
+		emp.setId(100);
+		emp.setName("Raj");
+		emp.setSalary(12000);
+		
+		EmployeeService es = new EmployeeService();
+		float updatedSalary = es.updateSalary(emp);
+		assertEquals(emp.getSalary()+5000, updatedSalary);
 	}
 
 	@Test
-	@Disabled
 	void testCheckLogin() {
-		fail("Not yet implemented");
+		EmployeeService es = new EmployeeService();
+		boolean res1 = es.checkLogin("akash@gmail.com", "123");
+		boolean res2 = es.checkLogin("lax@gmail.com", "123");
+		assertTrue(res1);
+		assertFalse(res2);
 	}
 
 }
