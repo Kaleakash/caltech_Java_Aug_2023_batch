@@ -28,7 +28,7 @@ class OperationServiceTest {
 		//fail("Not yet implemented");
 		OperationService os = new OperationService();
 		int result = os.sub(1000, 500);
-		assertEquals(50, result);
+		assertEquals(500, result);
 	}
 	@Test
 	void testMul() {
