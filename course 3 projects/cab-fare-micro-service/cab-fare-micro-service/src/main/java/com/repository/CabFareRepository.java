@@ -11,10 +11,10 @@ import com.bean.CabFare;
 public interface CabFareRepository extends JpaRepository<CabFare, Integer>{
 
 	
-	@Query("select cf.amount from CabFare cf where cf.to = :to and cf.from = :from and "
+	@Query("select cf.amount from CabFare cf where cf.tolocation = :tolocation and cf.fromlocation = :fromlocation and "
 			+ "cf.typeofcab=:typeofcab and cf.numberofseats=:numberofseats")
-	public float findCabFare(@Param("to") String to,
-	@Param("from") String from, 
+	public float findCabFare(@Param("tolocation") String tolocation,
+	@Param("fromlocation") String from, 
 	@Param("typeofcab") String typeofcab, 
 	@Param("numberofseats") int numberofseats);
 	

@@ -23,9 +23,9 @@ public class CabFareService {
 		return cabFareRepository.findAll();
 	}
 	
-	public float findCabFare(String to, String from, String typeofcab, int numberofseats) {
+	public float findCabFare(String tolocation, String fromlocation, String typeofcab, int numberofseats) {
 		try {
-		return cabFareRepository.findCabFare(to, from, typeofcab, numberofseats);	
+		return cabFareRepository.findCabFare(tolocation, fromlocation, typeofcab, numberofseats);	
 		} catch (Exception e) {
 			return -1;
 		}
