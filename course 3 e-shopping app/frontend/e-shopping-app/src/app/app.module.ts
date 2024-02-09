@@ -9,6 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { CustomerhomeComponent } from './customerhome/customerhome.component';
+import { ProductbyadminComponent } from './productbyadmin/productbyadmin.component';
+import { ProductbycustomerComponent } from './productbycustomer/productbycustomer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CustomerhomeComponent } from './customerhome/customerhome.component';
     SignupComponent,
     DashboardComponent,
     AdminhomeComponent,
-    CustomerhomeComponent
+    CustomerhomeComponent,
+    ProductbyadminComponent,
+    ProductbycustomerComponent
   ],
   imports: [
     BrowserModule,
