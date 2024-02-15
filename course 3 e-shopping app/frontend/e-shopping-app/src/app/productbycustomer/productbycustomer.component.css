@@ -1,0 +1,8 @@
+.imageClass{
+    display: inline;
+    border: 2px solid red;
+    border-radius: 30px;
+    padding: 50px;
+    width: 400px;
+    height: 400px;
+}

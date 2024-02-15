@@ -1,1 +1,81 @@
-<p>productbyadmin works!</p>
+<div class="container">
+
+
+    <form class="form-group" [formGroup]="productRef" (ngSubmit)="storeProduct()">
+        <div class="row">
+            <div class="col-6">
+                <h4>Add Product</h4>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="col-3">
+                <label><b>PName</b></label>
+            </div>
+            <div class="col-3">
+                <input type="email" class="form-control" formControlName="pname"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <label><b>Price</b></label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" formControlName="price"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <label><b>URL</b></label>
+            </div>
+            <div class="col-3">
+                <input type="url" class="form-control" formControlName="url"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <label><b>Qty</b></label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control" formControlName="qty"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <input type="submit" value="Store Product!" class="btn btn-success"/>
+            </div>
+            <div class="col-3">
+                <input type="reset" value="reset" class="btn btn-info"/>
+            </div>
+        </div>
+        <span style="color:red">{{msg}}</span>
+        </form>
+
+<hr/>
+    <table class="table">
+        
+        <tr>
+            <th>PId</th>
+            <th>PName</th>
+            <th>Price</th>
+            <th>Image URL</th>
+            <th>Qty</th>
+            <td>Delete</td>
+        </tr>
+        <tr *ngFor="let product of products">
+                <td>{{product.pid}}</td>
+                <td>{{product.pname}}</td>
+                <td>{{product.price}}</td>
+                <td><img src={{product.url}} width="80px" height="80px" /></td>
+                <td>{{product.qty}}</td>
+                <td>
+                    <a (click)="deleteProduct(product.pid)">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAmVBMVEX///89meK92/8REiQAAAuOjo7F3/8okt9srus1l+Cbx/bA3f/X5/epzvBDneI2luGIvfDx9/yoz/hysOfm8frg7fmx1Pu31fJ8teljqeaUw+3E3fRWpOQcj98AAAAJCR4Ait4AABwAABdUVFygyO6JvepKSlQfIC4aGik9PUgAABE0NDt+foR1dntbW2BnZ2+YmJtKSku0tLb7deeBAAAGM0lEQVR4nO2cDXOiSBCG1csyjBAGHFFBiPnSvdzF7F7+/4870e4BRZLQ0xC3yrdStVnk43FmmOl+aTIYXHXVVVexaRr7NcXRdxLFqRsEw5qCTD9PvwnJ17mQdaRCUuRh/B1Mt0NxnuggESz7Z1rnHyEVun/um+n5w2aCxpr3y7T8tJ0K5X6fTNGZe+6MVNYn1K3pPCnOyNyTfXZglCi8apbe1pQGyKx0f/NojExqfX6HBe4g+5tE5zDM1aJpDw1UeX+TVQrdkzfO2j5gi9uuGKbxibB38tonKB+wxfr0E5b+nKZJcCpzz9c+MYIbUNZ3cVNbrmgthBqySol8bXVPRskXVpP2EokFVTkfMUtZUKWdtFOhPKUyxZ0x7XqQGgM+d9R5hRQx2IpcXFiVOrfskmQWKJc2qmIzH51ZdKlK8ZwBbbby4VvxLhVzGKiKFgCapYI1/IjwrEQoZXV401ntWirG7k+W9SyYqiXOxwFtTogyOF7Jj5beNtqt0HjOjDgo0i7nKeqUvuxyRieHpLqzphKayrQb6g0Ghq3k0ML+8IedtJUaWs0yfval/Lyd8sx25ptnlW9oofIsGUfaHCc4skILwSlkwmSmYUYVjDyyRhByNOevbaFgvgpmI7JmACUaEv3WSjmhyMH5iYxrN/OoTN4MTiG4PEfjRk3oUBOE4ooY55xQXDYaQskxHSqVzFBLVYPa3ePeMeH+vj/eUNnFGwOU4jKs6lDORLt6XKHwZgvXDUeVDd7YdfXE6QzKNzM6XNQLd+uGVJmZIrxJoKRUQTnoZtluBynKI9Ab4gr4fVwi4BLe5NB0YmEa4uBHycA0JUy4CjANlF18cAZKAZSDwZ9ysPMwb8KZzME9tINtCxMwG5RZt+CKLiZfCDVGKBx1DiZSLuyy4IbC/F1qaCk0GT6HkgDlabvMqq5phlAjKtRIwyEZl7GOUMqlQ2GPs0GhyygTOhQEija+4gmUywdFtKXOCEapyuhQYAEoer53qsUBQsIUbgElGaHwfiZDzbhD9MEg5IMK2aDWfFBceUPpCZGhPAPFlTeUmYM8rPkEqAkewVergJmDokPxO80YpAs6FO7A9/gdnxnbQzE+UzZPhMdUqDE/VHzPBsVXwGSgQocIhdMvI1SEdQhUKMc8n+d7pBJBS6mFLdQ943MehHKpUBii3/Mx2UO53UHJhAqFtiknFPrWGRUKLeacEQoN54AKZZ78MkJl6ARQoeBwyVkPd5FQeEdL6jIDUIzJTOmkD0c0qBEcLvjyhl2QjteY0aCMYc0Xopf2PhkKD+AL0Svx8N4Uaw9lQnTOuotbmD0PmUNrKJM35JxQS0so9IZZKywN1PiSoHBMUaEww+KEwrIXuXYoUM4arX3Oshm09w+mdfuWwhCdzdovhLU4VChT4Mz5NkZs7CU7KDbDugp1cNLbQ7G76IWMaa1py4zmNqwPUGBZujQoOECxQhkn3RKKzUXfQ2k8Kw3KfKdOoDI7KN73MPCe3jvpraFmeJ9wBp4XCnXkpLeH4nfRC6U8UJzRcKW68pKgTGl6EXoaDyVvhkKbrYAyNSXUIvQGHdXgOCYNRKgJMORYqYAp8b5KwOskb6gUbO+DdEjjTCkEPjlTialLCEXZ3SUU70tsc1WF8kIhpMpdRCo6SEgpgkqBVVJsEKlX7V3FC7U8HjTOKNQLU8hSXNcJtQ6PNkwWOhwdG9asIXoNqrioc1IE5DhOw4auoEwVf3h85S/JwwHGW24/mNpAmVEveF9BRCi1oEDhyskMZZ45aAoURsO8r3AMBjhdBhQotGEFL9MAa8DFuDWVMzbfiBkKvbyiBq6lsJaZ18cr5BsoEbitFJRHcr9VHpn677Zl6eVhrLnMXsvy7EQxz+d7afH5dT9k4vTQUZYvkHbQeYWmmUVb5awZe1WhJDaWkrx5zJGWSeMfKGmWFHnS7Xv3caqzdm+qZTrt46+pRK3UA9BVV1111VVX/fH6cYEa3FygBn9doPZQK/jP4d/V4+MD/LYqfr4H6mHz8++Xm9XD3ebh8Z+Hm39ft0+bu7vHx7uXt7unzTdQFVCrzdPP1+3mafv66+11s/39+t/2/df729v79sfvlxdmqOJ0p82/gp/V6vDJ/0m1w/Y0EFN0AAAAAElFTkSuQmCC
+                    " width="50px" height="50px"/>
+                    </a>
+                </td>
+        </tr>
+    </table>
+</div>
