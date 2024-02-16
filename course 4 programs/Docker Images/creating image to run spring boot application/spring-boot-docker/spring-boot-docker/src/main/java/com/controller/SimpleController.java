@@ -10,6 +10,6 @@ public class SimpleController {
 	
 	@GetMapping(value = "/")
 	public String sayHello() {
-		return "Welcome to Spring boot with Docker";
+		return "Welcome to Spring boot with Docker created by Akash Kale!";
 	}
 }
