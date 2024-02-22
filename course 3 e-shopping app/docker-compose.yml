@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  mysql-container:
+    image: mysql:8
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: caltech_course3_eshopping_app
+    ports:
+      - 3307:3306
+    restart: always
+  angular-container:
+    build: ./frontend/e-shopping-app/
+    container_name: angular-container
+    image: akashkale/frontend-e-shopping:v1
+    ports:
+      - 85:80
+    restart: always  
+  springboot-container:
+    build: ./backend/Login-micro-service-app/Login-micro-service-app/
+    container_name: springboot-container 
+    image: akashkale/bakend-e-shopping-login-service:v1
+    depends_on:
+      - mysql-container
+    ports:
+      - 8181:8181
+    restart: always
