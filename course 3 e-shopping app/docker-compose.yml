@@ -9,6 +9,8 @@ services:
     ports:
       - 3307:3306
     restart: always
+    volumes:
+      - db:/var/lib/mysql
   angular-container:
     build: ./frontend/e-shopping-app/
     container_name: angular-container
@@ -25,3 +27,6 @@ services:
     ports:
       - 8181:8181
     restart: always
+volumes:
+  db:
+   driver: local 
