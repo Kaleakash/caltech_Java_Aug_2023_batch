@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  akash-service:
+    image: akashkale/angular-frontend:1.0
+    ports:
+      - 81:80
+  nusratavi-service:
+    image: nusratavi/my-spring-app:v1
+    ports:
+      - 9090:9090
+  gala-service:
+    image: gala107/gala-angular:v1
+    ports:
+      - 83:80
+  sabri-service:
+    image: sabrisaleh/my-angular-app:v1
+    ports:
+      - 84:80   
